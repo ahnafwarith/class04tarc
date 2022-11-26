@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const SayMyName = (props) => {
     const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        if (count % 2 == 0) alert('EVEN')
+        else alert('ODD')
+    }, [count])
     return (
         <div onClick={() => {
             // alert(`Yo baby ${props.name}`);
